@@ -70,4 +70,5 @@ export SPARK_MASTER_IP=localhost
 export SPARK_MASTER_PORT=7077
 export SPARK_WORKER_CORES=1
 export SPARK_WORDER_INSTANCES=1
-export SPARK_WORKER_MEMORY=6g
+export SPARK_WORKER_MEMORY=4g
+export SPARK_HISTORY_OPTS="-Dspark.history.ui.port=7777 -Dspark.history.retainedApplications=5 -Dspark.history.fs.logDirectory=hdfs://localhost:9000/sparkHistoryLogs"
