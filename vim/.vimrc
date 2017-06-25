@@ -161,6 +161,9 @@ let Tlist_Show_One_File=1
 let Tlist_Exit_OnlyWindow=1
 map<F12> :TlistToggle <CR>
 
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
+
 " nerdtree
 nmap <Leader>f :NERDTreeToggle<CR>
 let NERDTreeWinSize=32
