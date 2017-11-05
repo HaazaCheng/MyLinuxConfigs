@@ -3,34 +3,20 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
+" 设置包括vundle和初始化相关的runtime path
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'vim-scripts/DoxygenToolkit.vim'
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-"Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-"Plugin 'L9'
-" Git plugin not hosted on GitHub
-"Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-"Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Avoid a name conflict with L9
-"Plugin 'user/L9', {'name': 'newL9'}
-
-" All of your Plugins must be added before the following line
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+" 你的所有插件需要在下面这行之前
 call vundle#end()            " required
 filetype plugin indent on    " required
+" 需要执行这个命令来安装插件 vim +PluginInstall +qall
+
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
@@ -237,6 +223,8 @@ map <F7> :exec "!make"<CR>
 map <F8> :exec "!make debug"<CR>
 
 "airline
-let g:airline_theme="luna"
+let g:airline_theme='luna'
 let g:airline_powerline_fonts = 1
 set t_Co=256
+
+
