@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one or more
+  contributor license agreements.  See the NOTICE file distributed with
+  this work for additional information regarding copyright ownership.
+  The ASF licenses this file to You under the Apache License, Version 2.0
+  (the "License"); you may not use this file except in compliance with
+  the License.  You may obtain a copy of the License at
+
+      http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<configuration>
+	<property>
+        	<name>fs.defaultFS</name>
+        	<value>hdfs://hadoop-cluster:8020</value>
+        </property>
+	<property>
+        	<name>ha.zookeeper.quorum</name>
+        	<value>hadoop1:2181,hadoop2:2181,hadoop3:2181,hadoop4:2181,hadoop5:2181</value>
+        </property>
+
+	<!-- =============Trash=============== -->
+	<property>
+        	<name>fs.trash.interval</name>
+        	<value>60</value>
+        </property>
+	<property>
+        	<name>fs.trash.checkpoint.interval</name>
+        	<value>10</value>
+        </property>
+	<!-- =============WebHdfs=============== -->
+	<property>  
+		<name>hadoop.proxyuser.httpfs.hosts</name>  
+		<value>*</value>  
+	</property>  
+	<property>  
+		<name>hadoop.proxyuser.httpfs.groups</name>  
+		<value>*</value>  
+	</property>
+	<!-- =============Snappy=============== -->
+	<property>
+  		<name>io.compression.codecs</name>
+  		<value>org.apache.hadoop.io.compress.DefaultCodec,org.apache.hadoop.io.compress.GzipCodec,org.apache.hadoop.io.compress.SnappyCodec</value>
+	</property>	
+	<!-- =============确保mapred、可以使用代理=============== -->
+	<property>
+        	<name>hadoop.proxyuser.mapred.groups</name>
+        	<value>*</value>
+    	</property>
+    	<property>
+        	<name>hadoop.proxyuser.mapred.hosts</name>
+        	<value>*</value>
+    	</property>
+    	<property>
+        	<name>hadoop.proxyuser.yarn.groups</name>
+        	<value>*</value>
+    	</property>
+    	<property>
+        	<name>hadoop.proxyuser.yarn.hosts</name>
+        	<value>*</value>
+    	</property>
+	<!-- ============Staging Dirs============== -->
+	<property>
+    		<name>yarn.app.mapreduce.am.staging-dir</name>
+    		<value>/user</value>
+	</property>
+
+</configuration>
