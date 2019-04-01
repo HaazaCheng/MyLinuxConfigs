@@ -9,6 +9,7 @@
   s = status
   co = checkout
   b = branch
+  st = status
 
 
 [core]
